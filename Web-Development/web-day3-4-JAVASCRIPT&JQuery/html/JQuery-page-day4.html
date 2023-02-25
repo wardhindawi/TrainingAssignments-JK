@@ -1,0 +1,139 @@
+<html>
+    
+    <head>
+        <title>JQuery-page</title>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    <script>
+        $(function () {
+            $("#menu").menu();
+        });
+        $(document).ready(function () {
+            $('.slider').slick({
+                lazyLoad: 'ondemand',
+                arrows: true,
+                infinite: true,
+                dots: true,
+                slidesToShow: 4,
+                slidesToScroll: 4
+                
+            });
+        });
+    </script>
+    <style>
+        img{
+            width: auto;
+            height: 60px;
+        }
+        .ui-menu {
+            width: 150px;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider single-item center" style="height: 100px; width: 40%; ">
+        <div>
+            <img src="../Images/Arsenal-Logo.png"/>
+        </div>
+        <div>
+            <img src="../Images/Real-Madrid-Logo.png"/>
+        </div>
+        <div>
+            <img src="../Images/darkknight.jpg"/>
+        </div>
+        <div>
+            <img src="../Images/15e68215300195.5628f485eafe3.jpg"/>
+        </div>
+        <div>
+            <img src="../Images/books.png"/>
+        </div>
+        <div>
+            <img src="../Images/jazz.png"/>
+        </div>
+        <div>
+            <img src="../Images/rock.jpg"/>
+        </div>
+        <div>
+            <img src="img1.jpg"/>
+        </div>
+    </div>
+    <div>
+        <ul id="menu" class="center">
+            <li>
+                <div>Books</div>
+            </li>
+            <li>
+                <div>Football Clubs</div>
+                <ul>
+                    <li>
+                        <div>Arsenal</div>
+                    </li>
+                    <li>
+                        <div>Real Madrid</div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div>Movies</div>
+                <ul>
+                    <li>
+                        <div>The Dark Knight</div>
+                    </li>
+                    <li>
+                        <div>Inception</div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div>Music</div>
+                <ul>
+                    <li>
+                        <div>Rock</div>
+                        <ul>
+                            <li>
+                                <div>Alternative</div>
+                            </li>
+                            <li>
+                                <div>Classic</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>Jazz</div>
+                        <ul>
+                            <li>
+                                <div>Freejazz</div>
+                            </li>
+                            <li>
+                                <div>Big Band</div>
+                            </li>
+                            <li>
+                                <div>Modern</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>Pop</div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

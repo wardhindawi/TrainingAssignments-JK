@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>mobile-mockup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slides-button').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4
+            });
+        });
+
+        function openCity(evt, cityName) {
+
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            var citNameId = document.getElementById(cityName);
+            citNameId.style.display = "block";
+            evt.currentTarget.className += " active";
+
+            $(citNameId).slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4
+            });
+
+        }
+    </script>
+    <style>
+        .button {
+            background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+            border-radius: 0.4rem;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-size: 16px;
+            justify-content: center;
+            padding: 1rem 1.75rem;
+            text-decoration: none;
+            width: 90%;
+            border: 0;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .p2 {
+            margin: 10px;
+        }
+
+        img {
+            width: 12em;
+            height: 9em;
+        }
+
+        /* Create an active/current tablink class */
+        .button.active {
+            background-image: linear-gradient(-180deg, #042635 0%, #1E96C8 100%);
+        }
+
+        .button:disabled {
+            background-image: linear-gradient(-180deg, #918e8e 0%, #696767 100%);
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            margin-left: 2em;
+            display: none;
+            width: 95%;
+            padding: 6px 12px;
+            border: 1px solid #b1aeae;
+        }
+
+        body {
+            font-family: "Audiowide", sans-serif;
+            margin: 0;
+            background-color: rgb(255, 228, 228);
+        }
+
+        .flex-container {
+            margin-top: 5%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        @media (max-width: 500px) {
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .flex-container>div {
+                width: 100px;
+                height: auto;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+
+        }
+
+        .header {
+            padding: 60px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Adventures Explorer</h1>
+    </div>
+    <h1 class="p2">
+        Find your experience
+    </h1>
+    <p class="p2">
+        Hiking and connecting with nature? Choose a way that is right to you!
+    </p>
+
+    <div class="slides-button" style="width: 95%; margin-left: 2em;">
+        <div>
+            <input onclick="openCity(event, 'experience')" class="button p2 tablinks" type="button" value="experience">
+        </div>
+        <div>
+            <input onclick="openCity(event, 'Adventures')" class="button p2 tablinks" type="button" value="Adventures">
+        </div>
+        <div>
+            <input onclick="openCity(event, 'Activities')" class="button p2 tablinks" type="button" value="Activities">
+        </div>
+        <div>
+            <input class="button p2" type="button" value="Hiking" disabled>
+        </div>
+        <div>
+            <input class="button p2" type="button" value="Trips" disabled>
+        </div>
+        <div>
+            <input class="button p2" type="button" value="Diving" disabled>
+        </div>
+        <div>
+            <input class="button p2" type="button" value="Climbing" disabled>
+        </div>
+    </div>
+    <div class="tabcontent" style="margin-top: 1em;" id="experience">
+        <div>
+            <img src="../resources/images/hiking.jpeg">
+            <p class="p2" style="font-size: 1em;">hiking</p>
+        </div>
+        <div>
+            <img src="../resources/images/hotel.jpg">
+            <p class="p2" style="font-size: 1em;">Hotels</p>
+        </div>
+        <div>
+            <img src="../resources/images/resturant.jpg">
+            <p class="p2" style="font-size: 1em;">Resturants</p>
+        </div>
+        <div>
+            <img src="../resources/images/dendy-darma-740161-unsplash.jpg">
+            <p class="p2" style="font-size: 1em;">experience</p>
+        </div>
+    </div>
+    <div class="tabcontent" style="margin-top: 1em;" id="Adventures">
+        <div>
+            <img src="../resources/images/Skiing.jpg">
+            <p class="p2" style="font-size: 1em;">Skiing</p>
+        </div>
+        <div>
+            <img src="../resources/images/diving.jpg">
+            <p class="p2" style="font-size: 1em;">diving</p>
+        </div>
+        <div>
+            <img src="../resources/images/skydiving.jpg">
+            <p class="p2" style="font-size: 1em;">skydiving</p>
+        </div>
+        <div>
+            <img src="../resources/images/Caving.jpg">
+            <p class="p2" style="font-size: 1em;">Caving</p>
+        </div>
+    </div>
+    <div class="tabcontent" style="margin-top: 1em;" id="Activities">
+        <div>
+            <img src="../resources/images/movies.jpeg">
+            <p class="p2" style="font-size: 1em;">movies</p>
+        </div>
+        <div>
+            <img src="../resources/images/read.jpeg">
+            <p class="p2" style="font-size: 1em;">Read</p>
+        </div>
+        <div>
+            <img src="../resources/images/walk.jpg">
+            <p class="p2" style="font-size: 1em;">Walk</p>
+        </div>
+        <div>
+            <img src="../resources/images/swim.png">
+            <p class="p2" style="font-size: 1em;">swim</p>
+        </div>
+    </div>
+    <footer>
+        <div class="flex-container">
+            <div style="order: 5;"><img style="width: 100px; height: auto;" src="../resources/images/cards/A.png"></div>
+            <div style="order: 4;"><img style="width: 100px; height: auto;" src="../resources/images/cards/2.png"></div>
+            <div style="order: 3;"><img style="width: 100px; height: auto;" src="../resources/images/cards/3.png"></div>
+            <div style="order: 2;"><img style="width: 100px; height: auto;" src="../resources/images/cards/4.png"></div>
+            <div style="order: 1;"><img style="width: 100px; height: auto;" src="../resources/images/cards/5.png"></div>
+            <div style="order: 9;"><img style="width: 100px; height: auto;" src="../resources/images/cards/6.png"></div>
+            <div style="order: 8;"><img style="width: 100px; height: auto;" src="../resources/images/cards/7.png"></div>
+            <div style="order: 7;"><img style="width: 100px; height: auto;" src="../resources/images/cards/8.png"></div>
+            <div style="order: 6;"><img style="width: 100px; height: auto;" src="../resources/images/cards/9.png"></div>
+        </div>
+    </footer>
+</body>
+
+</html>

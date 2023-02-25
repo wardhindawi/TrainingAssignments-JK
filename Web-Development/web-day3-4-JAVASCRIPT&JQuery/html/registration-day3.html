@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/jquery-3.6.3.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+   
+</head>
+
+<body>
+
+
+    <div id="fullForm">
+        <h1 style="text-align: center;">Sponsor Registration</h1>
+        <div id="left-div">
+            <div class="inputs">
+                <label>prefix</label>
+                <input class="textInput input-70" type="text">
+            </div>
+            <div class="inputs">
+                <label>Name</label>
+                <input id="lName" pattern="^[a-zA-Z]+$" type="text" class="textInput" style="width: 34%;">
+                <input id="fName" pattern="^[a-zA-Z]+$" type="text" class="textInput" style="width: 34%;">
+            </div>
+            <div class="inputs">
+                <label>Preferred Pronouns</label>
+                <input id="pronouns" class="textInput" style="width: 30%;" type="text">
+            </div>
+            <div class="inputs">
+                <label>Email</label>
+                <input id="email" class="textInput input-70" type="email">
+            </div>
+            <div class="inputs">
+                <label>Work Phone</label>
+                <input id="workPhone" class="textInput input-70" type="number">
+            </div>
+            <div class="inputs">
+                <label>Cell Phone</label>
+                <input id="cellPhone" class="textInput input-70" type="number">
+            </div>
+            <div class="inputs">
+                <label>Job Title</label>
+                <input id="jobTitle" pattern="^[a-zA-Z]+$" class="textInput input-70" type="text">
+            </div>
+            <div class="inputs">
+                <label>Company</label>
+                <input id="company" pattern="^[a-zA-Z]+$" class="textInput input-70" type="text">
+            </div>
+            <div class="inputs">
+                <label>Full business Address</label> </br>
+                <input id="address" class="textInput input-100" type="text">
+            </div>
+            <div class="inputs">
+                <label>Company Website</label> </br>
+                <input id="companyWebSite" class="textInput input-100" type="url">
+            </div>
+        </div>
+        <div class="vl"></div>
+        <div id="right-div">
+            <div class="inputs">
+                <label>Company Description</label> </br>
+                <input pattern="^[a-zA-Z]+$" class="textInput input-100" style="height: 40px;" type="text">
+            </div>
+            </br>
+            <div class="inputs">
+                <label>Company Facebook Page</label> </br>
+                <input id="facebookURL" class="textInput input-100" type="text">
+            </div>
+            </br>
+            <div class="inputs">
+                <label>Company Twitter Handle</label> </br>
+                <input class="textInput input-100" type="text">
+            </div>
+            </br>
+            <div class="inputs">
+                <label>Company Linked Handle</label> </br>
+                <input class="textInput input-100" type="text">
+            </div>
+            </br>
+            <div class="inputs">
+                <label>Sponsorship Level</label> </br>
+                <div id="radioGroup" style="border: none;">
+                    <input type="radio" name="radioGroup" value="Gold" title="Gold">
+                    <label>Gold</label></br>
+                    <input type="radio" name="radioGroup" value="Diamond" title="Diamond">
+                    <label>Diamond</label></br>
+                    <input type="radio" name="radioGroup" value="Platinum" title="Platinum">
+                    <label>Platinum</label>
+                </div>
+            </div>
+            <div class="inputs">
+                <label>Additional Guests (names, email)</label> </br>
+                <input class="textInput input-100" type="text">
+            </div>
+
+            <input type="button" style="margin-top: 20px; float: right;" value="Submit" onclick="fullFormValidation()">
+
+        </div>
+    </div>
+</body>
+
+</html>
