@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<div class="flex-container">
+			<div>
+				<h:inputTextarea value="#{calculator.value}" />
+			</div>
+			<div>
+				<h:commandButton styleClass="button" value="%" disabled="false" action="#{calculator.setChoice(5)}"/>
+				<h:commandButton styleClass="button" value="CE" disabled="false" action="#{calculator.deleteAllCE}"/>
+				<h:commandButton styleClass="button" value="C" disabled="false" action="#{calculator.deleteAllC}"/>
+				<h:commandButton styleClass="button" value="DEL" disabled="false" action="#{calculator.deleteDigit}"/>
+			</div>
+			<div>
+				<h:commandButton styleClass="button" value="1/x" disabled="true"/>
+				<h:commandButton styleClass="button" value="x²" disabled="false" action="#{calculator.power}" />
+				<h:commandButton styleClass="button" value="²√" disabled="false" action="#{calculator.sqrootCal}"/>
+				<h:commandButton styleClass="button" value="÷" action="#{calculator.setChoice(4)}"/>
+			</div>
+			<div>
+				<h:commandButton styleClass="button" value="7" action="#{calculator.setNumber(7)}"/>
+				<h:commandButton styleClass="button" value="8" action="#{calculator.setNumber(8)}"/>
+				<h:commandButton styleClass="button" value="9" action="#{calculator.setNumber(9)}"/>
+				<h:commandButton styleClass="button" value="x" action="#{calculator.setChoice(3)}"/>
+			</div>
+			<div>
+				<h:commandButton styleClass="button" value="4" action="#{calculator.setNumber(4)}"/>
+				<h:commandButton styleClass="button" value="5" action="#{calculator.setNumber(5)}"/>
+				<h:commandButton styleClass="button" value="6" action="#{calculator.setNumber(6)}"/>
+				<h:commandButton styleClass="button" value="-" action="#{calculator.setChoice(2)}"/>
+			</div>
+			<div>
+				<h:commandButton styleClass="button" value="1" action="#{calculator.setNumber(1)}"/>
+				<h:commandButton styleClass="button" value="2" action="#{calculator.setNumber(2)}"/>
+				<h:commandButton styleClass="button" value="3" action="#{calculator.setNumber(3)}"/>
+				<h:commandButton styleClass="button" value="+" action="#{calculator.setChoice(1)}" />
+			</div>
+			<div>
+				<h:commandButton styleClass="button" value="+/-" disabled="false" action="#{calculator.negateNumber}"/>
+				<h:commandButton styleClass="button" value="0" action="#{calculator.setNumber(0)}"/>
+				<h:commandButton styleClass="button" value="." disabled="true"/>
+				<h:commandButton styleClass="button" value="=" action="#{calculator.showResult}" />
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>
