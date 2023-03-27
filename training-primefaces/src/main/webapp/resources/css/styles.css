@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

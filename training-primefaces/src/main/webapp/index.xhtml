@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="styles.css" />
+</h:head>
+<h:body>
+	<p:sidebar widgetVar="sidebar2" position="right">
+		<h3>Number of users</h3>
+		<div class="knob-container ui-corner-all">
+			<p:knob disabled="true" value="#{indexview.users.size()}" />
+		</div>
+	</p:sidebar>
+	<h:form>
+		<p:panel id="panel">
+			<f:facet name="header">
+				<p:toolbar>
+					<p:toolbarGroup>
+						<p:commandButton title="Delete" icon="pi pi-trash" update="table"
+							styleClass="ui-button-danger" action="#{indexview.deleteList()}" />
+						<p:commandButton style="margin-left:5px;" value="Add User"
+							id="add" icon="pi pi-user-plus" styleClass="mr-2" />
+					</p:toolbarGroup>
+					<p:toolbarGroup align="right">
+						<p:commandButton icon="pi pi-arrow-left" type="button"
+							style="margin-right:5px;" onclick="PF('sidebar2').show()"
+							styleClass="mr-2" />
+						<p:menuButton value="Options">
+							<p:menuitem value="Homepage" url="#" icon="pi pi-home" />
+						</p:menuButton>
+					</p:toolbarGroup>
+				</p:toolbar>
+			</f:facet>
+			<p:dataTable var="user" value="#{indexview.users}"
+				style="margin-top:5px;" id="table">
+				<p:column headerText="First Name">
+					<h:outputText value="#{user.fName}" />
+				</p:column>
+
+				<p:column headerText="Last Name">
+					<h:outputText value="#{user.lName}" />
+				</p:column>
+
+				<p:column headerText="Age">
+					<h:outputText value="#{user.age}" />
+				</p:column>
+			</p:dataTable>
+			<f:facet name="footer">
+				<p:lightBox styleClass="imagebox" id="lighbox1">
+							<h:outputLink value="../../resources/images/dendy.jpg"
+								title="Nature">
+								<p:graphicImage name="/images/dendy.jpg" id="nature2"
+									styleClass="shadow-2" style="height: 12.5rem; width: 20rem" />
+							</h:outputLink>
+						
+							<h:outputLink value="../../resources/images/read.jpeg"
+								title="read">
+								<p:graphicImage name="/images/read.jpeg" id="nature3"
+									styleClass="shadow-2" style="height: 12.5rem; width: 20rem" />
+							</h:outputLink>
+						
+							<h:outputLink value="../../resources/images/resturant.jpg"
+								title="resturant">
+								<p:graphicImage name="/images/resturant.jpg" id="nature4"
+									styleClass="shadow-2" style="height: 12.5rem; width: 20rem" />
+							</h:outputLink>
+							<h:outputLink value="../../resources/images/Skiing.jpg"
+								title="Skiing">
+								<p:graphicImage name="/images/Skiing.jpg" id="nature5"
+									styleClass="shadow-2" style="height: 12.5rem; width: 20rem" />
+							</h:outputLink>
+				</p:lightBox>
+			</f:facet>
+		</p:panel>
+		<p:overlayPanel for="add" style="width:425px">
+			<p:panelGrid columns="2" style="margin:auto;">
+				<p:outputLabel value="First name: " />
+				<p:inputText value="#{indexview.user.fName}" />
+				<p:outputLabel value="Last name: " />
+				<p:inputText value="#{indexview.user.lName}" />
+				<p:outputLabel value="Age" id="age" />
+				<p:spinner id="ageSpin" value="#{indexview.user.age}" min="0"
+					max="100" />
+				<p:outputLabel value="Password: " />
+				<p:password id="nonFeedback" value="#{indexview.user.password}" />
+			</p:panelGrid>
+			<p:commandButton style="margin:5px;" value="Add" id="addUser"
+				action="#{indexview.showFullName()}" update="panel"
+				icon="pi pi-user-plus" styleClass="mr-2" />
+		</p:overlayPanel>
+	</h:form>
+</h:body>
+</html>

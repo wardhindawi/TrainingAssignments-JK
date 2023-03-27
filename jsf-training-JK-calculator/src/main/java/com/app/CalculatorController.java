@@ -1,17 +1,16 @@
 package com.app;
 
-import java.io.Serializable;
+
+import com.jk.web.faces.controllers.JKWebController;
 
 import io.micrometer.common.util.StringUtils;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
-import lombok.val;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
+
 
 @Named("calculator")
 @ViewScoped
-public class CalculatorController implements Serializable {
+public class CalculatorController extends JKWebController {
 
 	/**
 	 * 
